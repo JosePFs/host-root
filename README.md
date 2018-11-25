@@ -6,12 +6,12 @@
 
 Docker does not allow mount /, so:
 
-    docker run --net = host -it --rm -v "/: / host-root" host-root
+    docker run --net=host -it --rm -v "/:/host-root" host-root
 
 To execute all the commands within the mount point:
 
-    chroot / host-root / bash
+    chroot /host-root bash
 
 To execute only one command:
 
-    chroot / host-root / dpkg -i /home/john.doe/code_1.28.2-1539735992_amd64.deb
+    chroot /host-root dpkg -i /home/john.doe/code_1.28.2-1539735992_amd64.deb
